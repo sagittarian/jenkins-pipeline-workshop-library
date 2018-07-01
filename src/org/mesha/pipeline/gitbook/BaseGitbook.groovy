@@ -19,6 +19,12 @@ abstract class BaseGitbook implements Serializable {
         }
     }
 
+    void runStage(String name, Closure stage) {
+        script.echo "--- Start stage [$name] ---"
+        script.stage(name, stage)
+        script.echo "--- End stage [$name] ---"
+    }
+
     void runImpl() {
         runStage('Setup', this.&initParams)
         runStage('Build', this.&build)
