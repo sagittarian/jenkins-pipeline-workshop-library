@@ -1,6 +1,6 @@
 package org.mesha.pipeline.gitbook
 
-abstract class BaseGitbook implemnet Serializable {
+abstract class BaseGitbook implements Serializable {
     def script
     def image
     def imageLatest

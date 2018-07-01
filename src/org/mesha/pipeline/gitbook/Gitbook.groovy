@@ -1,6 +1,6 @@
 package org.mesha.pipeline.gitbook
 
-class Gitbook extend BaseGitbook {
+class Gitbook extends BaseGitbook {
     void initParams() {
         // calculate GIT lastest commit short-hash
         this.gitCommitHash = script.sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
