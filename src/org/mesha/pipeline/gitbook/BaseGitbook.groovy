@@ -7,6 +7,8 @@ abstract class BaseGitbook implements Serializable {
     def gitCommitHash
     def shortCommitHash
     def version
+    def buildId
+    def project
     def currentBuildDisplayName
 
     BaseGitbook(script) {
