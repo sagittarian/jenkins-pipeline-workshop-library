@@ -11,7 +11,7 @@ class Gitbook extends BaseGitbook {
         this.shortCommitHash = gitCommitHash.take(7)
         // calculate a sample version tag
         this.version = shortCommitHash
-        this.bulidId = script.env.BUILD_ID
+        this.buildId = script.env.BUILD_ID
         this.project = script.env.PROJECT
         // set the build display name
         this.currentBuildDisplayName = "#${buildId}-${version}"
