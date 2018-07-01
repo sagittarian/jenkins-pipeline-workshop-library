@@ -35,17 +35,17 @@ abstract class BaseGitbook implements Serializable {
 
     void build() {
         // Build the docker image using a Dockerfile
-        docker.build(image)
+        script.docker.build(image)
         // override the latest tag
-        docker.build(imageLatest)
+        script.docker.build(imageLatest)
     }
 
     void publish() {
-        docker.withRegistry("https://registry.hub.docker.com", "dockerHub")	{
+        script.docker.withRegistry("https://registry.hub.docker.com", "dockerHub")	{
             // version eq latest git tag
-            docker.image(image).push()
+            script.docker.image(image).push()
             // override the latest tag
-            docker.image(imageLatest).push()
+            script.docker.image(imageLatest).push()
         }
     }
 }
